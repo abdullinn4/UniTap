@@ -1,0 +1,51 @@
+@use "../../styles/colors" as color;
+@use "../../styles/mixins" as mixins;
+
+.header_wrapper{
+  background: color.$c-white-color ;
+  height: 70px;
+  width: 100%;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding-right: 290px;
+  padding-left: 290px;
+  justify-content: space-between;
+  border-bottom: 1px solid color.$c-black-10percent;
+  align-items: center;
+  box-sizing: border-box;
+
+  @include mixins.device(tablet){
+    padding: 0 20px;
+  }
+
+  @include mixins.device(mobile){
+    padding: 0 16px;
+    >div:first-child{
+      display: none;
+    }
+    .header_controls{
+      img:nth-child(1){
+        order: 1;
+        content: url("src/assets/Avatar.svg");
+      }
+      img:nth-child(2){
+        order: 2;
+        content: url("src/assets/SearchFieldMobile.svg");
+      }
+      img:nth-child(3){
+        order: 3;
+        content: url("src/assets/Notification.svg")
+      }
+    }
+  }
+  @media (max-width: 360px) {
+    display: none;
+  }
+}
+.header_controls{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
