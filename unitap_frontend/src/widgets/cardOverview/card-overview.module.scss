@@ -1,0 +1,18 @@
+@use "../../styles/colors" as color;
+@use "../../styles/mixins" as mixins;
+
+.overview_wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 8px;
+  gap: 5px;
+}
+.overview_button{
+  background-color: color.$c-white-color;
+  border: none;
+
+}
+.overview_save_button{
+
+}

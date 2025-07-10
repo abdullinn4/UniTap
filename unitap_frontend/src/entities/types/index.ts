@@ -1,0 +1,1 @@
+export {SectionType, TabType} from "../types/card.ts"
