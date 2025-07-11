@@ -3,9 +3,10 @@
 
 .switcher {
   display: flex;
-  width: 100%;
+  width: auto;
+  height: 51px;
   gap: 12px;
-  padding: 8px;
+  padding: 3px;
   background-color: color.$c-black-4percent;
   border-radius: 12px;
   text-align: center;
@@ -16,20 +17,22 @@
 .switcher button {
   width: 100%;
   background-color: transparent;
-  padding: 10px 16px;
+  padding: 16px;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  color: color.$c-black-40percent;
+  font-size: 15px;
 
   &:hover {
-    background-color: color.$c-black-10percent;
+    //background-color: color.$c-black-10percent;
   }
 }
 
 .active {
-  color: color.$c-black-color;
+  color: color.$c-black-color !important;
   background-color: color.$c-white-color !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }

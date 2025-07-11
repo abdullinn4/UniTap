@@ -5,14 +5,66 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
-  padding: 8px;
-  gap: 5px;
+  padding: 16px 8px;
+  gap: 10px;
+}
+.section_row{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 3px;
+
+  &:hover {
+    background-color: color.$c-black-4percent;
+  }
 }
 .overview_button{
-  background-color: color.$c-white-color;
+  background-color: transparent;
+  cursor: pointer;
   border: none;
+  font-size: 16px;
+  font-weight: 450;
+  transition: background-color 0.2s ease;
 
 }
-.overview_save_button{
+.section_row:nth-child(3) .overview_button{
+  color: color.$c-black-40percent;
+}
 
+.overview_save_button{
+  width: 100%;
+  border: none;
+  background-color: color.$c-black-10percent;
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    //background-color: color.$c-black-40percent; ??????
+  }
+
+  &:active {
+    //background-color: color.$c-black-40percent; ??????
+  }
+
+  p:first-child{
+    font-weight: 500;
+    font-size: 16px;
+    color: #131314CC;
+  }
+  p:last-child{
+    font-weight: 450;
+    font-size: 14px;
+    color: color.$c-black-40percent;
+  }
+}
+.overview_save_button p{
+  margin: 0;
+  padding: 0;
 }
