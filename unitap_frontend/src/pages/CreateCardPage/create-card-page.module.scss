@@ -2,15 +2,14 @@
 @use "../../styles/mixins" as mixins;
 
 .create_card_wrapper{
-  width: 100%;
   padding: 12px 290px;
   display: flex;
   gap: 50px;
-  align-items: center;
 }
 .left_panel{
   display: flex;
   width: 349px;
+  height: 100%;
   flex-direction: column;
   background-color: color.$c-white-color;
   border-radius: 15px;
@@ -18,5 +17,10 @@
 
 }
 .right_panel{
-
+  display: flex;
+  width: 460px;
+  flex-direction: column;
+  background-color: color.$c-white-color;
+  border-radius: 15px;
+  padding: 16px;
 }

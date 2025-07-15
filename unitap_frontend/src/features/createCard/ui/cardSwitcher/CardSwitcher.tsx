@@ -1,5 +1,5 @@
 import style from "./card-switcher.module.scss"
-import type {TabType} from "../../../entities/types";
+import type {TabType} from "../../../../entities/types";
 
 interface Props {
     activeTab: string,

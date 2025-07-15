@@ -18,6 +18,10 @@
   &:hover {
     background-color: color.$c-black-4percent;
   }
+  &:active {
+    background-color: color.$c-black-10percent;
+  }
+
 }
 .overview_button{
   background-color: transparent;
@@ -46,11 +50,11 @@
   transition: background-color 0.2s ease;
 
   &:hover {
-    //background-color: color.$c-black-40percent; ??????
+    background-color: color.$c-green-primary
   }
 
   &:active {
-    //background-color: color.$c-black-40percent; ??????
+    background-color: color.$c-green-secondary
   }
 
   p:first-child{

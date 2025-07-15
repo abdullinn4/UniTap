@@ -1,9 +1,10 @@
-import {CardSwitcher} from "../../features/createCard";
-import {useCardSwitcher} from "../../features/createCard";
+import {CardSwitcher} from "../../features/createCard/ui/cardSwitcher";
+import {useCardSwitcher} from "../../features/createCard/ui/cardSwitcher";
 import style from "../CreateCardPage/create-card-page.module.scss"
 import {CardOverview} from "../../widgets/cardOverview";
 import {useState} from "react";
 import type {SectionType} from "../../entities/types";
+import {CreateCardPanel} from "../../features/createCard/ui/createCardPanel";
 
 export const CreateCardPage = () => {
     const [activeTab, switchTab] = useCardSwitcher();
@@ -20,8 +21,8 @@ export const CreateCardPage = () => {
                 <div className={style.right_panel}>
                     {/*{activeSection === "settings" && <SettingsPanel />}
                     {activeSection === "viewer" && <ViewerPanel />}
-                    {activeSection === "help" && <HelpPanel />}
-                    {!activeSection && <CreateCardPanel/>}*/}
+                    {activeSection === "help" && <HelpPanel />}*/}
+                    {!activeSection && <CreateCardPanel/>}
                 </div>
             </div>
         </main>
