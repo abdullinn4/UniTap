@@ -1,8 +1,8 @@
 import style from "../cardOverview/card-overview.module.scss"
-import type {SectionType} from "../../entities/types";
+import type {OverviewSectionType} from "../../entities/types";
 
 interface Props {
-    onSelectSection : (section: SectionType) => void;
+    onSelectSection : (section: OverviewSectionType) => void;
 }
 export const CardOverview = ({onSelectSection}: Props) => {
     const handleSave = () => {}

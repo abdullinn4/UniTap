@@ -1,1 +1,1 @@
-export {SectionType, TabType} from "../types/card.ts"
+export {AddElementSectionType,OverviewSectionType, TabType, CardElement} from "../types/card.ts"
