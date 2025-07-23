@@ -1,17 +1,24 @@
-import {useState} from "react";
+import {useRef, useState} from "react";
 import style from "../create-card-panel.module.scss"
 import {useNavigate} from "react-router";
 import {ExitModal} from "./ExitModal.tsx";
 import {CardTopActions} from "./CardTopActions.tsx";
+import {useClickOutside} from "../../../../../shared/utils";
 
 export const CardHeader = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const [showExitModal, setShowExitModal] = useState(false);
 
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useClickOutside(dropdownRef, () => {
+        setShowDropdown(false);
+    });
+
     //const navigate = useNavigate();
 
     return(
-        <div className={style.create_card_header}>
+        <div className={style.create_card_header} ref={dropdownRef}>
             <button
                 className={style.exit_button}
                 onClick={() => setShowExitModal(true)}

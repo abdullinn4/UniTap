@@ -54,7 +54,18 @@
   align-items: flex-start;
   gap: 6px;
   z-index: 10;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: dropdownFadeIn 0.2s ease-out forwards;
 }
+@keyframes dropdownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .dropdown_button{
   width: 100%;
   border: none;
@@ -366,6 +377,7 @@
     font-weight: 400;
     font-size: 16px;
     padding: 15px;
+    resize: none;
   }
   p{
     padding: 8px 0;
@@ -474,9 +486,12 @@
 }
 .addElementButton_wrapper {
   border-top: 1px solid color.$c-black-10percent;
+  padding: 10px 15px;
+}
+
+.empty_container {
   display: flex;
   flex-direction: column;
-  padding: 10px 15px;
   gap: 16px;
   align-items: center;
   overflow-y: auto;
@@ -522,4 +537,104 @@
 .drop_highlight {
   background-color: #f0f8ff;
   border-top: 2px dashed #007aff;
+}
+.card_element_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+}
+.card_element {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.text_block {
+  display: flex;
+  flex-direction: column;
+
+  p:first-child {
+    font-size: 16px;
+    font-weight: 450;
+    color: #131314;
+    margin: 0;
+  }
+
+  p:last-child {
+    font-size: 13px;
+    font-weight: 400;
+    color: color.$c-black-40percent;
+    margin: 2px 0 0 0;
+  }
+}
+.drag_button {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.card_img{
+  height: 40px;
+  width: 40px;
+}
+.dropdown_card_button{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: #131314CC;
+  padding: 3px 7px;
+
+  &:hover{
+    background-color: #13131426;
+  }
+}
+.card_actions{
+
+}
+.dropdown_wrapper{
+
+}
+.dropdown_menu{
+  position: absolute;
+  background-color: color.$c-white-color;
+  border: 1px solid color.$c-black-4percent;
+  border-radius: 15px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+  z-index: 10;
+  top: auto;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: dropdownFadeIn 0.2s ease-out forwards;
+}
+.dropdown_menu .dropdown_button:last-child{
+  color: #FF3B30;
+}
+.hiddenCard {
+  opacity: 0.5 !important;
+}
+
+.hiddenText {
+  text-decoration: line-through;
+  color: #999;
+}
+.dropdown_button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
 }

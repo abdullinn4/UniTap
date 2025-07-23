@@ -7,9 +7,10 @@ import {ElementSearch} from "./ElementSearch.tsx";
 
 interface Props {
     onSelectSection: (addElementSection: AddElementSectionType) => void
+    activeSection: AddElementSectionType | null;
 }
 
-export const CardAddElements = ({onSelectSection}: Props) => {
+export const CardAddElements = ({onSelectSection, activeSection}: Props) => {
     const [query, setQuery] = useState("");
 
     const filteredElements = ELEMENTS.filter(el =>
@@ -17,7 +18,6 @@ export const CardAddElements = ({onSelectSection}: Props) => {
     );
 
     return (
-
         <>
             <p className={style.section_title}>Элементы для добавления</p>
 
@@ -28,8 +28,11 @@ export const CardAddElements = ({onSelectSection}: Props) => {
 
                 <div className={style.elements_list}>
                     {filteredElements.map(({ label, type, icon }) => (
-                        <div key={type} onClick={() => onSelectSection(type)}>
-                            <DraggableElement type={type} label={label} icon={icon} />
+                        <div
+                            key={type}
+                            onClick={() => onSelectSection(type)}
+                        >
+                            <DraggableElement type={type} label={label} icon={icon} isActive={type === activeSection} />
                         </div>
                     ))}
                     {filteredElements.length === 0 && (

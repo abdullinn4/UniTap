@@ -85,3 +85,9 @@
 .no_results{
   margin: 0;
 }
+.active{
+  background-color: color.$c-white-color;
+  border: 1px solid color.$c-black-4percent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+

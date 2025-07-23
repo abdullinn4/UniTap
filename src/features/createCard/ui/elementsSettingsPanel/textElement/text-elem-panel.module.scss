@@ -1,0 +1,111 @@
+@use "../../../../../styles/colors" as color;
+@use "../../../../../styles/mixins" as mixins;
+
+.text_panel_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p{
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.exit_button{
+  display: flex;
+  height: 35px;
+  width: 35px;
+  border: none;
+  background-color: color.$c-black-4percent;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.exit_button:hover{
+  background-color: color.$c-black-10percent;
+}
+.top_actions_button{
+  height: 35px;
+  width: 35px;
+  display: flex;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.top_actions_button:hover{
+  background-color: color.$c-black-10percent;
+}
+.text_panel_wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 15px;
+  gap: 18px;
+
+  label{
+    font-weight: 400;
+    font-size: 18px;
+    color: #131314CC;
+    margin: 0;
+    padding: 0;
+
+  }
+}
+.text_panel_title{
+  height: 130px;
+  border: 0.5px solid color.$c-black-10percent;
+  background-color: color.$c-black-4percent;
+  border-radius: 12px;
+  color: #131314CC;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 15px;
+  vertical-align: top;
+  resize: none;
+  line-height: 1.5;
+}
+.text_panel_content{
+  height: 200px;
+  border: 0.5px solid color.$c-black-10percent;
+  background-color: color.$c-black-4percent;
+  border-radius: 12px;
+  color: #131314;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 15px;
+  vertical-align: top;
+  resize: none;
+  line-height: 1.5;
+}
+.textarea_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.save_button{
+  width: 100%;
+  border: none;
+  background-color: color.$c-green-primary;
+  border-radius: 16px;
+  padding: 19px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  font-size: 16px;
+
+  &:hover {
+    background-color: color.$c-green-primary
+  }
+
+  &:active {
+    background-color: color.$c-green-secondary
+  }
+}

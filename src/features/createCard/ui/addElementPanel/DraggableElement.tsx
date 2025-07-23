@@ -6,9 +6,10 @@ interface DraggableElementProps {
     type: AddElementSectionType;
     label: string;
     icon: string;
+    isActive: boolean;
 }
 
-export const DraggableElement = ({ type, label, icon }: DraggableElementProps) => {
+export const DraggableElement = ({ type, label, icon, isActive }: DraggableElementProps) => {
     const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
         id: type,
     });
@@ -18,7 +19,7 @@ export const DraggableElement = ({ type, label, icon }: DraggableElementProps) =
             ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
             : undefined,
         opacity: isDragging ? 0.5 : 1,
-        cursor: "grab",
+        cursor: "default",
     };
 
     return (
@@ -27,7 +28,7 @@ export const DraggableElement = ({ type, label, icon }: DraggableElementProps) =
             style={dragStyle}
             {...listeners}
             {...attributes}
-            className={style.add_element_item}
+            className={`${style.add_element_item} ${isActive ? style.active : ""}`}
         >
             <img src={icon} alt={icon} />
             <div>
