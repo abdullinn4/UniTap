@@ -1,5 +1,6 @@
 import type {AddElementSectionType, ElementInstance} from "../../../../entities/types";
 import {TextElementSettings} from "../elementsSettingsPanel/textElement/TextElementSettings.tsx";
+import {ImageElementSettings} from "../elementsSettingsPanel/imageElement/ImageElementSettings.tsx";
 
 interface Props {
     type: AddElementSectionType;
@@ -13,12 +14,19 @@ export const ElementSettingsRouter = ({type, element, onBack, onSave}: Props) =>
         case "text":
             return (
                 <TextElementSettings
-                    data={element}
+                    data={element as Extract<ElementInstance, { type: "text" }>}
                     onBack={onBack}
                     onSave={onSave}
                 />
             );
-        // другие типы сюда
+        case "image":
+            return(
+                <ImageElementSettings
+                    data={element as Extract<ElementInstance, { type: "image" }>}
+                    onBack={onBack}
+                    onSave={onSave}
+                />
+            )
         default:
             return <p>Нет настроек для типа: {type}</p>;
     }

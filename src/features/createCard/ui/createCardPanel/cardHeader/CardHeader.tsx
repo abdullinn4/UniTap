@@ -44,7 +44,6 @@ export const CardHeader = () => {
                     /*onExit = {() => navigate("")}*/
                 />
             )}
-
         </div>
     )
 }

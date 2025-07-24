@@ -31,11 +31,11 @@ export const CreateCardPage = () => {
         if (existing) {
             setActiveAddElementSection(type);
         } else {
-            const newTemp: ElementInstance = {
+            const newTemp: ElementInstance= {
                 id: uuidv4(),
                 type,
                 data: getDefaultElementData(type),
-            };
+            } as ElementInstance;
             setTempElements((prev) => ({...prev, [type]: newTemp}));
             setActiveAddElementSection(type);
         }
@@ -53,7 +53,7 @@ export const CreateCardPage = () => {
             id: uuidv4(),
             type: draggedType,
             data: getDefaultElementData(draggedType),
-        };
+        } as ElementInstance;
 
         // Просто убираем из временных
         setTempElements((prev) => {

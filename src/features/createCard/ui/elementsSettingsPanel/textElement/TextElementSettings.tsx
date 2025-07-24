@@ -1,9 +1,10 @@
 import type {ElementInstance} from "../../../../../entities/types";
 import {useEffect, useState} from "react";
 import style from "../textElement/text-elem-panel.module.scss";
+import {HeaderPanel} from "../HeaderPanel.tsx";
 
 interface Props {
-    data: ElementInstance;
+    data: Extract<ElementInstance, { type: "text" }>;
     onBack: () => void;
     onSave: (data: ElementInstance) => void;
 }
@@ -21,27 +22,8 @@ export const TextElementSettings = ({data, onBack, onSave}: Props) => {
 
     return (
         <>
-            <div className={style.text_panel_header}>
-                <button
-                    className={style.exit_button}
-                    onClick={onBack}
-                >
-                    <img src="src/assets/back.svg" alt="back button"/>
-                </button>
-
-                <p>Текст</p>
-
-
-                <div>
-                    <button
-                        className={style.top_actions_button}
-                        onClick={() => setShowDropdown(!showDropdown)}
-                    >
-                        <img src="src/assets/top_actions.svg" alt="..."/>
-                    </button>
-                </div>
-            </div>
-
+            <HeaderPanel title={"Текст"} onBack={onBack} onDropdownClick={() => setShowDropdown(!showDropdown)}
+                         showDropdown={showDropdown}/>
 
             <div className={style.text_panel_wrapper}>
                 <div className={style.textarea_wrapper}>
