@@ -70,7 +70,7 @@ export const ElementCard = ({element, index, onSelect, onMove, onHide, onDelete,
                 </button>
 
                 <img
-                    src={element.data?.icon || getElementIcon(element.type)}
+                    src={element.data?.url || getElementIcon(element.type)}
                     alt="icon"
                     className={style.card_img}
                 />

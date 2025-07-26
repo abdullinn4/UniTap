@@ -1,0 +1,55 @@
+@use "../../../../../styles/colors" as color;
+@use "../../../../../styles/mixins" as mixins;
+
+.icon_options{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.active_icon {
+  border: 2px dashed #3D3F41 !important;
+}
+.upload_wrapper{
+
+}
+.upload_button{
+
+}
+.icon_btn {
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 10px;
+  background-color: color.$c-black-4percent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+.icons_wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p{
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    color: color.$c-black-40percent;
+  }
+}
+.icon_img{
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.image_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

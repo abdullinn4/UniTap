@@ -1,4 +1,4 @@
-import type {ImageElementData, TextElementData} from "./elements/elements.types.ts";
+import type {ImageElementData, TextElementData, WebsiteElementData} from "./elements/elements.types.ts";
 
 export type OverviewSectionType = "settings" | "viewer" | "help";
 export type TabType = 'overview' | 'add';
@@ -24,6 +24,7 @@ export type ElementInstance_ = {
 export type ElementDataMap = {
     text: TextElementData;
     image: ImageElementData;
+    website: WebsiteElementData;
     // Добавь другие соответствия
 
 };

@@ -13,7 +13,7 @@ interface Props {
 
 export const ImageElementSettings = ({data, onSave, onBack}: Props) => {
     const [showDropdown, setShowDropdown] = useState(false);
-    const [localData, setLocalData] = useState<ElementInstance>(data);
+    const [localData, setLocalData] = useState<ElementInstance<"image">>(data);
 
     const handleSave = () => {
         onSave(localData);

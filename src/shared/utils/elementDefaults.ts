@@ -7,6 +7,8 @@ export const getDefaultElementData = <T extends AddElementSectionType>(type: T):
             return { title: "", content: "" } as ElementDataMap[T];
         case "image":
             return { url: [], title: "", content: "" } as ElementDataMap[T];
+        case "website":
+            return { title: "", link: "", iconType: "link", icon: ""} as ElementDataMap[T]
         // другие кейсы...
         default:
             throw new Error(`Неизвестный тип: ${type}`);

@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const TextElementSettings = ({data, onBack, onSave}: Props) => {
-    const [localData, setLocalData] = useState<ElementInstance>(data);
+    const [localData, setLocalData] = useState<ElementInstance<"text">>(data);
     const [showDropdown, setShowDropdown] = useState(false);
 
     const handleSave = () => {

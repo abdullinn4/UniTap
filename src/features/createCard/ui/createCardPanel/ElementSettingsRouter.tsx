@@ -1,6 +1,7 @@
 import type {AddElementSectionType, ElementInstance} from "../../../../entities/types";
 import {TextElementSettings} from "../elementsSettingsPanel/textElement/TextElementSettings.tsx";
 import {ImageElementSettings} from "../elementsSettingsPanel/imageElement/ImageElementSettings.tsx";
+import {WebsiteElementSettings} from "../elementsSettingsPanel/websiteElement/WebsiteElementSettings.tsx";
 
 interface Props {
     type: AddElementSectionType;
@@ -23,6 +24,14 @@ export const ElementSettingsRouter = ({type, element, onBack, onSave}: Props) =>
             return(
                 <ImageElementSettings
                     data={element as Extract<ElementInstance, { type: "image" }>}
+                    onBack={onBack}
+                    onSave={onSave}
+                />
+            )
+        case "website":
+            return (
+                <WebsiteElementSettings
+                    data={element as Extract<ElementInstance, { type: "website"}>}
                     onBack={onBack}
                     onSave={onSave}
                 />

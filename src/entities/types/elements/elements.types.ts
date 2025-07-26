@@ -7,3 +7,9 @@ export interface ImageElementData{
     title: string;
     content: string;
 }
+export interface WebsiteElementData{
+    title: string;
+    link: string;
+    iconType: "custom" | "link" | "globe";
+    icon?: string; // путь или base64 иконки, если iconType === "custom"
+}
